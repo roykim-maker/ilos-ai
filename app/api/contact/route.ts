@@ -56,7 +56,7 @@ export async function POST(request: Request) {
 
   try {
     await resend.emails.send({
-      from: "ilos.ai Contact <contact@ilos.ai>",
+      from: "ilos.ai <hello@contact.ilos.ai>",
       to: "roy@ilos.ai",
       replyTo: email,
       subject: `New inquiry from ${name} — ${company}`,
