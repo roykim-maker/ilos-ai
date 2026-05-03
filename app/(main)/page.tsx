@@ -217,35 +217,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Diagnostic Teaser */}
-      <section className="py-20 px-6 bg-neutral-900">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-neutral-950 border border-neutral-800 rounded-2xl p-8 sm:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-            <div className="max-w-xl">
-              <span className="text-xs font-semibold uppercase tracking-widest text-blue-400 block mb-3">
-                Free Tool
-              </span>
-              <h2 className="text-3xl font-bold tracking-tight text-white">
-                Know your AI opportunity score before you build.
-              </h2>
-              <p className="mt-3 text-neutral-400 leading-relaxed">
-                3 minutes. 9 questions. Get a custom score, estimated annual savings, and a recommended AI system — specific to your business.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-6">
-                {["AI Opportunity Score (0–100)", "Estimated annual savings", "Top 3 recommended systems"].map((item) => (
-                  <div key={item} className="flex items-center gap-2 text-sm text-neutral-400">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
-                    {item}
-                  </div>
-                ))}
+      {/* Diagnostic — Primary Action */}
+      <section className="relative py-28 px-6 bg-neutral-950 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_60%,_rgba(109,40,217,0.12)_0%,_transparent_70%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_40%,_rgba(59,130,246,0.06)_0%,_transparent_60%)] pointer-events-none" />
+
+        <div className="relative max-w-2xl mx-auto text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-violet-950/70 border border-violet-700/40 rounded-full px-4 py-1.5 mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse shrink-0" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-violet-300">
+              Free · 3 min
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+            Find Out What AI Could Replace in Your Business — In 3 Minutes
+          </h2>
+
+          {/* Subtext */}
+          <p className="mt-5 text-lg text-neutral-400 leading-relaxed">
+            Answer 9 quick questions and get your AI Opportunity Score, estimated savings, and a custom system plan.
+          </p>
+
+          {/* Bullets */}
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8">
+            {[
+              "AI Opportunity Score (0–100)",
+              "Estimated annual savings",
+              "Top 3 systems to implement first",
+            ].map((item) => (
+              <div key={item} className="flex items-center gap-2 text-sm text-neutral-300">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-violet-400 shrink-0">
+                  <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.5" />
+                  <path d="M4.5 7l2 2 3-3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                {item}
               </div>
-            </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="mt-10">
             <Link
               href="/diagnostic"
-              className="shrink-0 bg-blue-600 hover:bg-blue-700 text-white font-medium px-7 py-4 rounded-lg transition-colors whitespace-nowrap"
+              className="inline-block bg-violet-600 hover:bg-violet-500 text-white font-semibold px-10 py-4 rounded-xl transition-all text-lg shadow-[0_0_40px_rgba(139,92,246,0.3)] hover:shadow-[0_0_55px_rgba(139,92,246,0.45)] hover:-translate-y-px"
             >
               Start My Diagnostic →
             </Link>
+            <p className="mt-4 text-xs text-neutral-600">No account required. Results in under 3 minutes.</p>
           </div>
         </div>
       </section>
