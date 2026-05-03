@@ -102,15 +102,15 @@ export default function IndustriesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-24 px-6 bg-white border-b border-neutral-200">
+      <section className="py-24 px-6 bg-neutral-950 border-b border-neutral-800">
         <div className="max-w-7xl mx-auto">
-          <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+          <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
             Industries
           </span>
-          <h1 className="mt-4 text-5xl sm:text-6xl font-bold tracking-tight text-neutral-950 max-w-3xl leading-tight">
+          <h1 className="mt-4 text-5xl sm:text-6xl font-bold tracking-tight text-white max-w-3xl leading-tight">
             Built for service businesses where every touchpoint counts
           </h1>
-          <p className="mt-6 text-xl text-neutral-600 max-w-2xl leading-relaxed">
+          <p className="mt-6 text-xl text-neutral-400 max-w-2xl leading-relaxed">
             We focus on verticals where operational efficiency directly drives
             revenue — and where the cost of a missed call is real.
           </p>
@@ -122,36 +122,36 @@ export default function IndustriesPage() {
         <section
           key={industry.id}
           id={industry.id}
-          className={`py-24 px-6 ${index % 2 === 0 ? "bg-white" : "bg-neutral-50"}`}
+          className={`py-24 px-6 ${index % 2 === 0 ? "bg-neutral-950" : "bg-neutral-900"}`}
         >
           <div className="max-w-7xl mx-auto">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+            <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
               {industry.label}
             </span>
-            <h2 className="mt-4 text-4xl font-bold tracking-tight text-neutral-950 max-w-2xl">
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-white max-w-2xl">
               {industry.headline}
             </h2>
 
-            <blockquote className="mt-8 pl-6 border-l-2 border-blue-600">
-              <p className="text-lg text-neutral-600 italic leading-relaxed">
+            <blockquote className="mt-8 pl-6 border-l-2 border-blue-500">
+              <p className="text-lg text-neutral-400 italic leading-relaxed">
                 {industry.stat}
               </p>
             </blockquote>
 
-            <p className="mt-8 text-neutral-600 leading-relaxed max-w-2xl">
+            <p className="mt-8 text-neutral-400 leading-relaxed max-w-2xl">
               {industry.description}
             </p>
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-5">
+                <p className="text-xs font-semibold uppercase tracking-widest text-neutral-600 mb-5">
                   Common Pain Points
                 </p>
                 <ul className="flex flex-col gap-3">
                   {industry.painPoints.map((point) => (
                     <li
                       key={point}
-                      className="flex items-start gap-3 text-neutral-700 text-sm"
+                      className="flex items-start gap-3 text-neutral-400 text-sm"
                     >
                       <svg
                         width="16"
@@ -159,7 +159,7 @@ export default function IndustriesPage() {
                         viewBox="0 0 16 16"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="mt-0.5 shrink-0 text-neutral-400"
+                        className="mt-0.5 shrink-0 text-neutral-600"
                       >
                         <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.5" />
                         <path d="M8 5v4M8 11v.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -171,14 +171,14 @@ export default function IndustriesPage() {
               </div>
 
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-5">
+                <p className="text-xs font-semibold uppercase tracking-widest text-neutral-600 mb-5">
                   How We Solve It
                 </p>
                 <ul className="flex flex-col gap-3">
                   {industry.solutions.map((solution) => (
                     <li
                       key={solution}
-                      className="flex items-start gap-3 text-neutral-700 text-sm"
+                      className="flex items-start gap-3 text-neutral-300 text-sm"
                     >
                       <svg
                         width="16"
@@ -186,7 +186,7 @@ export default function IndustriesPage() {
                         viewBox="0 0 16 16"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="mt-0.5 shrink-0 text-blue-600"
+                        className="mt-0.5 shrink-0 text-blue-500"
                       >
                         <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.5" />
                         <path d="M5.5 8l2 2 3-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -202,7 +202,7 @@ export default function IndustriesPage() {
       ))}
 
       {/* CTA */}
-      <section className="py-24 px-6 bg-neutral-950">
+      <section className="py-24 px-6 bg-black">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-bold tracking-tight text-white">
             Don&apos;t see your industry?

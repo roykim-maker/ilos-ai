@@ -86,15 +86,15 @@ export default function SolutionsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-24 px-6 bg-white border-b border-neutral-200">
+      <section className="py-24 px-6 bg-neutral-950 border-b border-neutral-800">
         <div className="max-w-7xl mx-auto">
-          <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+          <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
             Solutions
           </span>
-          <h1 className="mt-4 text-5xl sm:text-6xl font-bold tracking-tight text-neutral-950 max-w-3xl leading-tight">
+          <h1 className="mt-4 text-5xl sm:text-6xl font-bold tracking-tight text-white max-w-3xl leading-tight">
             AI solutions built for your entire operation
           </h1>
-          <p className="mt-6 text-xl text-neutral-600 max-w-2xl leading-relaxed">
+          <p className="mt-6 text-xl text-neutral-400 max-w-2xl leading-relaxed">
             ilos.ai designs integrated AI systems — not one-off tools — that
             work together across every part of your business.
           </p>
@@ -106,40 +106,40 @@ export default function SolutionsPage() {
         <section
           key={solution.id}
           id={solution.id}
-          className={`py-24 px-6 ${index % 2 === 0 ? "bg-white" : "bg-neutral-50"}`}
+          className={`py-24 px-6 ${index % 2 === 0 ? "bg-neutral-950" : "bg-neutral-900"}`}
         >
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+                <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
                   {solution.label}
                 </span>
-                <h2 className="mt-4 text-4xl font-bold tracking-tight text-neutral-950">
+                <h2 className="mt-4 text-4xl font-bold tracking-tight text-white">
                   {solution.title}
                 </h2>
                 <p className="mt-2 text-lg font-medium text-neutral-500 italic">
                   {solution.tagline}
                 </p>
-                <p className="mt-6 text-neutral-600 leading-relaxed">
+                <p className="mt-6 text-neutral-400 leading-relaxed">
                   {solution.description}
                 </p>
-                <div className="mt-8 p-6 bg-blue-50 border border-blue-100 rounded-xl">
-                  <p className="text-sm font-semibold text-blue-900 mb-1">Outcome</p>
-                  <p className="text-blue-800 text-sm leading-relaxed">
+                <div className="mt-8 p-6 bg-blue-950/50 border border-blue-900/50 rounded-xl">
+                  <p className="text-sm font-semibold text-blue-300 mb-1">Outcome</p>
+                  <p className="text-blue-200/80 text-sm leading-relaxed">
                     {solution.outcome}
                   </p>
                 </div>
               </div>
 
               <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-6">
+                <p className="text-xs font-semibold uppercase tracking-widest text-neutral-600 mb-6">
                   What&apos;s included
                 </p>
                 <ul className="flex flex-col gap-4">
                   {solution.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-3 text-neutral-700"
+                      className="flex items-start gap-3 text-neutral-300"
                     >
                       <svg
                         width="18"
@@ -147,7 +147,7 @@ export default function SolutionsPage() {
                         viewBox="0 0 18 18"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="mt-0.5 shrink-0 text-blue-600"
+                        className="mt-0.5 shrink-0 text-blue-500"
                       >
                         <circle cx="9" cy="9" r="8" stroke="currentColor" strokeWidth="1.5" />
                         <path d="M5.5 9l2.5 2.5 4.5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -163,7 +163,7 @@ export default function SolutionsPage() {
       ))}
 
       {/* CTA */}
-      <section className="py-24 px-6 bg-neutral-950">
+      <section className="py-24 px-6 bg-black">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-bold tracking-tight text-white">
             Not sure which solution fits?

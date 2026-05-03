@@ -52,13 +52,13 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="py-24 px-6 bg-white border-b border-neutral-200">
+      <section className="py-24 px-6 bg-neutral-950 border-b border-neutral-800">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+            <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
               About
             </span>
-            <h1 className="mt-4 text-5xl sm:text-6xl font-bold tracking-tight text-neutral-950 leading-tight">
+            <h1 className="mt-4 text-5xl sm:text-6xl font-bold tracking-tight text-white leading-tight">
               We build AI systems that run businesses.
             </h1>
           </div>
@@ -66,14 +66,14 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-24 px-6 bg-neutral-50">
+      <section className="py-24 px-6 bg-neutral-900">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-6 block">
+              <span className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-6 block">
                 Our Mission
               </span>
-              <div className="space-y-5 text-neutral-700 leading-relaxed">
+              <div className="space-y-5 text-neutral-400 leading-relaxed">
                 <p>
                   ilos.ai was founded on a simple premise: most businesses are
                   still running operations the way they did 20 years ago — with
@@ -101,18 +101,18 @@ export default function AboutPage() {
             </div>
 
             <div className="space-y-6">
-              <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400 block mb-6">
+              <span className="text-xs font-semibold uppercase tracking-widest text-neutral-600 block mb-6">
                 Our Values
               </span>
               {values.map((value) => (
                 <div
                   key={value.title}
-                  className="border border-neutral-200 bg-white rounded-xl p-6"
+                  className="border border-neutral-800 bg-neutral-950 rounded-xl p-6"
                 >
-                  <h3 className="font-semibold text-neutral-950 mb-2">
+                  <h3 className="font-semibold text-white mb-2">
                     {value.title}
                   </h3>
-                  <p className="text-sm text-neutral-600 leading-relaxed">
+                  <p className="text-sm text-neutral-400 leading-relaxed">
                     {value.description}
                   </p>
                 </div>
@@ -123,13 +123,13 @@ export default function AboutPage() {
       </section>
 
       {/* What Makes Us Different */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-24 px-6 bg-neutral-950">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-12">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+            <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
               Our Approach
             </span>
-            <h2 className="mt-4 text-4xl font-bold tracking-tight text-neutral-950">
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-white">
               What makes us different
             </h2>
           </div>
@@ -138,12 +138,12 @@ export default function AboutPage() {
             {differentiators.map((item) => (
               <div
                 key={item.title}
-                className="bg-neutral-50 border border-neutral-200 rounded-xl p-8"
+                className="bg-neutral-900 border border-neutral-800 rounded-xl p-8"
               >
-                <h3 className="text-lg font-semibold text-neutral-950 mb-3">
+                <h3 className="text-lg font-semibold text-white mb-3">
                   {item.title}
                 </h3>
-                <p className="text-neutral-600 leading-relaxed text-sm">
+                <p className="text-neutral-400 leading-relaxed text-sm">
                   {item.description}
                 </p>
               </div>
@@ -153,7 +153,7 @@ export default function AboutPage() {
       </section>
 
       {/* The Name */}
-      <section className="py-24 px-6 bg-neutral-950">
+      <section className="py-24 px-6 bg-neutral-900">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
@@ -181,12 +181,12 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-24 px-6 bg-black">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl font-bold tracking-tight text-neutral-950">
+          <h2 className="text-4xl font-bold tracking-tight text-white">
             Want to work with us?
           </h2>
-          <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
+          <p className="mt-4 text-lg text-neutral-400 leading-relaxed">
             Every engagement starts with a conversation. Book a strategy call
             and let&apos;s figure out what your AI OS looks like.
           </p>

@@ -37,17 +37,20 @@ export function ContactForm() {
     }
   }
 
+  const inputClass =
+    "bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-shadow";
+
   if (state === "success") {
     return (
-      <div className="bg-blue-50 border border-blue-100 rounded-xl p-10 text-center">
-        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <div className="bg-blue-950/50 border border-blue-900/50 rounded-xl p-10 text-center">
+        <div className="w-12 h-12 bg-blue-950 border border-blue-800 rounded-full flex items-center justify-center mx-auto mb-4">
           <svg
             width="22"
             height="22"
             viewBox="0 0 22 22"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="text-blue-600"
+            className="text-blue-400"
           >
             <path
               d="M4 11l5 5 9-9"
@@ -58,10 +61,10 @@ export function ContactForm() {
             />
           </svg>
         </div>
-        <h3 className="text-lg font-semibold text-neutral-950 mb-2">
+        <h3 className="text-lg font-semibold text-white mb-2">
           Message received
         </h3>
-        <p className="text-neutral-600 text-sm leading-relaxed">
+        <p className="text-neutral-400 text-sm leading-relaxed">
           We&apos;ll get back to you within one business day. Or feel free to
           book directly on the calendar to the right.
         </p>
@@ -73,8 +76,8 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="name" className="text-sm font-medium text-neutral-700">
-            Name <span className="text-blue-600">*</span>
+          <label htmlFor="name" className="text-sm font-medium text-neutral-300">
+            Name <span className="text-blue-500">*</span>
           </label>
           <input
             id="name"
@@ -82,12 +85,12 @@ export function ContactForm() {
             type="text"
             required
             placeholder="Your name"
-            className="border border-neutral-300 rounded-lg px-4 py-3 text-sm text-neutral-950 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-shadow"
+            className={inputClass}
           />
         </div>
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="email" className="text-sm font-medium text-neutral-700">
-            Email <span className="text-blue-600">*</span>
+          <label htmlFor="email" className="text-sm font-medium text-neutral-300">
+            Email <span className="text-blue-500">*</span>
           </label>
           <input
             id="email"
@@ -95,14 +98,14 @@ export function ContactForm() {
             type="email"
             required
             placeholder="you@company.com"
-            className="border border-neutral-300 rounded-lg px-4 py-3 text-sm text-neutral-950 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-shadow"
+            className={inputClass}
           />
         </div>
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="company" className="text-sm font-medium text-neutral-700">
-          Company / Practice Name <span className="text-blue-600">*</span>
+        <label htmlFor="company" className="text-sm font-medium text-neutral-300">
+          Company / Practice Name <span className="text-blue-500">*</span>
         </label>
         <input
           id="company"
@@ -110,27 +113,27 @@ export function ContactForm() {
           type="text"
           required
           placeholder="Your business name"
-          className="border border-neutral-300 rounded-lg px-4 py-3 text-sm text-neutral-950 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-shadow"
+          className={inputClass}
         />
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="phone" className="text-sm font-medium text-neutral-700">
+        <label htmlFor="phone" className="text-sm font-medium text-neutral-300">
           Phone{" "}
-          <span className="text-neutral-400 font-normal">(optional)</span>
+          <span className="text-neutral-600 font-normal">(optional)</span>
         </label>
         <input
           id="phone"
           name="phone"
           type="tel"
           placeholder="+1 (555) 000-0000"
-          className="border border-neutral-300 rounded-lg px-4 py-3 text-sm text-neutral-950 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-shadow"
+          className={inputClass}
         />
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="business" className="text-sm font-medium text-neutral-700">
-          What does your business do? <span className="text-blue-600">*</span>
+        <label htmlFor="business" className="text-sm font-medium text-neutral-300">
+          What does your business do? <span className="text-blue-500">*</span>
         </label>
         <textarea
           id="business"
@@ -138,26 +141,26 @@ export function ContactForm() {
           required
           rows={3}
           placeholder="Brief description of your business and what you offer..."
-          className="border border-neutral-300 rounded-lg px-4 py-3 text-sm text-neutral-950 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-shadow resize-none"
+          className={`${inputClass} resize-none`}
         />
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="challenge" className="text-sm font-medium text-neutral-700">
+        <label htmlFor="challenge" className="text-sm font-medium text-neutral-300">
           What&apos;s your biggest operational challenge?{" "}
-          <span className="text-neutral-400 font-normal">(optional)</span>
+          <span className="text-neutral-600 font-normal">(optional)</span>
         </label>
         <textarea
           id="challenge"
           name="challenge"
           rows={3}
           placeholder="Missed calls, manual scheduling, slow follow-up, front desk overwhelm..."
-          className="border border-neutral-300 rounded-lg px-4 py-3 text-sm text-neutral-950 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-shadow resize-none"
+          className={`${inputClass} resize-none`}
         />
       </div>
 
       {state === "error" && (
-        <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+        <p className="text-sm text-red-400 bg-red-950/50 border border-red-900/50 rounded-lg px-4 py-3">
           {errorMessage}
         </p>
       )}
@@ -165,7 +168,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={state === "submitting"}
-        className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-medium px-6 py-3.5 rounded-lg transition-colors text-sm cursor-pointer disabled:cursor-not-allowed"
+        className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-900 disabled:text-blue-600 text-white font-medium px-6 py-3.5 rounded-lg transition-colors text-sm cursor-pointer disabled:cursor-not-allowed"
       >
         {state === "submitting" ? "Sending..." : "Send Message"}
       </button>

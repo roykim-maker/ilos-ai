@@ -17,7 +17,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-neutral-200">
+    <header className="fixed top-0 inset-x-0 z-50 bg-neutral-950/90 backdrop-blur border-b border-neutral-800">
       <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" onClick={() => setOpen(false)}>
           <Logo />
@@ -31,8 +31,8 @@ export function Navbar() {
               href={link.href}
               className={`text-sm font-medium transition-colors ${
                 pathname === link.href
-                  ? "text-neutral-950"
-                  : "text-neutral-500 hover:text-neutral-950"
+                  ? "text-white"
+                  : "text-neutral-400 hover:text-white"
               }`}
             >
               {link.label}
@@ -52,7 +52,7 @@ export function Navbar() {
 
         {/* Mobile menu toggle */}
         <button
-          className="md:hidden p-2 text-neutral-600 hover:text-neutral-950 transition-colors"
+          className="md:hidden p-2 text-neutral-400 hover:text-white transition-colors"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -70,7 +70,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-neutral-200 bg-white px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden border-t border-neutral-800 bg-neutral-950 px-6 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -78,8 +78,8 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               className={`text-sm font-medium transition-colors ${
                 pathname === link.href
-                  ? "text-neutral-950"
-                  : "text-neutral-500 hover:text-neutral-950"
+                  ? "text-white"
+                  : "text-neutral-400 hover:text-white"
               }`}
             >
               {link.label}

@@ -140,17 +140,17 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[88vh] flex items-center bg-white">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_0%,_#dbeafe_0%,_transparent_60%)] pointer-events-none" />
+      <section className="relative min-h-[88vh] flex items-center bg-neutral-950">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_0%,_#2563eb18_0%,_transparent_60%)] pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
           <div className="max-w-3xl">
-            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-600 mb-6">
+            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-400 mb-6">
               AI Operating Systems
             </span>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-neutral-950 leading-[1.05]">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05]">
               AI Operating Systems for Modern Businesses
             </h1>
-            <p className="mt-6 text-xl text-neutral-600 max-w-xl leading-relaxed">
+            <p className="mt-6 text-xl text-neutral-400 max-w-xl leading-relaxed">
               We design and deploy AI systems that run your operations — so you
               don&apos;t have to.
             </p>
@@ -163,7 +163,7 @@ export default function HomePage() {
               </Link>
               <a
                 href="#how-it-works"
-                className="border border-neutral-300 hover:border-neutral-400 text-neutral-700 font-medium px-6 py-3.5 rounded-lg transition-colors"
+                className="border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-white font-medium px-6 py-3.5 rounded-lg transition-colors"
               >
                 See How It Works
               </a>
@@ -173,16 +173,16 @@ export default function HomePage() {
       </section>
 
       {/* What We Do */}
-      <section className="py-24 px-6 bg-neutral-50">
+      <section className="py-24 px-6 bg-neutral-900">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+            <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
               What We Build
             </span>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight text-neutral-950">
+            <h2 className="mt-3 text-4xl font-bold tracking-tight text-white">
               One system. Every touchpoint.
             </h2>
-            <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
+            <p className="mt-4 text-lg text-neutral-400 leading-relaxed">
               ilos.ai builds the AI infrastructure that connects every part of
               your operation — from the first call to the final follow-up.
             </p>
@@ -192,13 +192,13 @@ export default function HomePage() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="bg-white border border-neutral-200 rounded-xl p-8 hover:border-neutral-300 transition-colors"
+                className="bg-neutral-950 border border-neutral-800 rounded-xl p-8 hover:border-neutral-700 transition-colors"
               >
-                <div className="text-blue-600 mb-4">{feature.icon}</div>
-                <h3 className="text-lg font-semibold text-neutral-950 mb-2">
+                <div className="text-blue-500 mb-4">{feature.icon}</div>
+                <h3 className="text-lg font-semibold text-white mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-neutral-600 leading-relaxed">
+                <p className="text-neutral-400 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -225,10 +225,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-800 rounded-xl overflow-hidden">
             {metrics.map((metric) => (
-              <div
-                key={metric.value}
-                className="bg-neutral-950 p-8"
-              >
+              <div key={metric.value} className="bg-neutral-900 p-8">
                 <div className="text-4xl font-bold text-white">
                   {metric.value}
                 </div>
@@ -245,17 +242,17 @@ export default function HomePage() {
       </section>
 
       {/* Case Study Highlight */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-24 px-6 bg-neutral-900">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+              <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
                 Case Study
               </span>
-              <h2 className="mt-3 text-4xl font-bold tracking-tight text-neutral-950">
+              <h2 className="mt-3 text-4xl font-bold tracking-tight text-white">
                 What this looks like in practice.
               </h2>
-              <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
+              <p className="mt-4 text-lg text-neutral-400 leading-relaxed">
                 A regional dental practice was losing new patient calls to
                 voicemail and after-hours gaps. We designed and deployed a
                 complete AI Front Desk — voice AI, SMS follow-up, and booking
@@ -263,7 +260,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/case-study"
-                className="mt-8 inline-flex items-center gap-2 text-blue-600 font-medium hover:text-blue-700 transition-colors"
+                className="mt-8 inline-flex items-center gap-2 text-blue-400 font-medium hover:text-blue-300 transition-colors"
               >
                 Read the full case study
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -281,9 +278,9 @@ export default function HomePage() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="bg-neutral-50 border border-neutral-200 rounded-xl p-6"
+                  className="bg-neutral-950 border border-neutral-800 rounded-xl p-6"
                 >
-                  <div className="text-3xl font-bold text-neutral-950">
+                  <div className="text-3xl font-bold text-white">
                     {stat.value}
                   </div>
                   <div className="text-sm text-neutral-500 mt-1">{stat.label}</div>
@@ -295,16 +292,16 @@ export default function HomePage() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-24 px-6 bg-neutral-50">
+      <section id="how-it-works" className="py-24 px-6 bg-neutral-950">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+            <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
               Process
             </span>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight text-neutral-950">
+            <h2 className="mt-3 text-4xl font-bold tracking-tight text-white">
               How we build your AI OS
             </h2>
-            <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
+            <p className="mt-4 text-lg text-neutral-400 leading-relaxed">
               Every engagement follows the same four-phase process. No generic
               templates, no off-the-shelf software.
             </p>
@@ -313,13 +310,13 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((step) => (
               <div key={step.number} className="relative">
-                <div className="text-5xl font-bold text-neutral-200 mb-4">
+                <div className="text-5xl font-bold text-neutral-800 mb-4">
                   {step.number}
                 </div>
-                <h3 className="text-lg font-semibold text-neutral-950 mb-2">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   {step.title}
                 </h3>
-                <p className="text-neutral-600 leading-relaxed text-sm">
+                <p className="text-neutral-400 leading-relaxed text-sm">
                   {step.description}
                 </p>
               </div>
@@ -329,16 +326,16 @@ export default function HomePage() {
       </section>
 
       {/* Industries */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-24 px-6 bg-neutral-900">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-16">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+            <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
               Industries
             </span>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight text-neutral-950">
+            <h2 className="mt-3 text-4xl font-bold tracking-tight text-white">
               Built for service businesses
             </h2>
-            <p className="mt-4 text-lg text-neutral-600 leading-relaxed">
+            <p className="mt-4 text-lg text-neutral-400 leading-relaxed">
               We specialize in verticals where every missed call and slow
               response is real lost revenue.
             </p>
@@ -349,15 +346,15 @@ export default function HomePage() {
               <Link
                 key={industry.name}
                 href={industry.href}
-                className="group border border-neutral-200 rounded-xl p-8 hover:border-blue-200 hover:bg-blue-50/30 transition-all"
+                className="group border border-neutral-800 rounded-xl p-8 hover:border-blue-800 hover:bg-blue-950/20 transition-all"
               >
-                <h3 className="text-lg font-semibold text-neutral-950 mb-2 group-hover:text-blue-700 transition-colors">
+                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
                   {industry.name}
                 </h3>
-                <p className="text-neutral-600 leading-relaxed">
+                <p className="text-neutral-400 leading-relaxed">
                   {industry.description}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm text-blue-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="mt-4 inline-flex items-center gap-1 text-sm text-blue-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                   Learn more
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -370,7 +367,7 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 px-6 bg-neutral-950">
+      <section className="py-24 px-6 bg-black">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
             Ready to build your AI operating system?
@@ -388,7 +385,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/solutions"
-              className="border border-white/20 hover:border-white/40 text-white font-medium px-8 py-4 rounded-lg transition-colors text-lg"
+              className="border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-white font-medium px-8 py-4 rounded-lg transition-colors text-lg"
             >
               View Solutions
             </Link>

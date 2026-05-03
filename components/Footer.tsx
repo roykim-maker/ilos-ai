@@ -23,7 +23,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-neutral-200 bg-white">
+    <footer className="border-t border-neutral-800 bg-neutral-950">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
@@ -34,7 +34,7 @@ export function Footer() {
             </p>
             <a
               href="mailto:roy@ilos.ai"
-              className="mt-4 inline-block text-sm text-neutral-500 hover:text-neutral-950 transition-colors"
+              className="mt-4 inline-block text-sm text-neutral-500 hover:text-white transition-colors"
             >
               roy@ilos.ai
             </a>
@@ -43,7 +43,7 @@ export function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([group, links]) => (
             <div key={group}>
-              <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-neutral-600 mb-4">
                 {group}
               </p>
               <ul className="flex flex-col gap-3">
@@ -51,7 +51,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-neutral-500 hover:text-neutral-950 transition-colors"
+                      className="text-sm text-neutral-500 hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -62,11 +62,11 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-neutral-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-sm text-neutral-400">
+        <div className="mt-16 pt-8 border-t border-neutral-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <p className="text-sm text-neutral-600">
             © {new Date().getFullYear()} ilos.ai. All rights reserved.
           </p>
-          <p className="text-sm text-neutral-400">
+          <p className="text-sm text-neutral-600">
             InfluenceLayer Operating System
           </p>
         </div>

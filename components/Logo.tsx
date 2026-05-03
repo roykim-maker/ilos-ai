@@ -11,7 +11,7 @@ export function Logo({ className = "", iconClassName = "", showWordmark = true }
         viewBox="0 0 100 60"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={`w-8 h-5 text-blue-600 ${iconClassName}`}
+        className={`w-8 h-5 text-blue-500 ${iconClassName}`}
         aria-hidden="true"
       >
         <path
@@ -23,7 +23,7 @@ export function Logo({ className = "", iconClassName = "", showWordmark = true }
         />
       </svg>
       {showWordmark && (
-        <span className="text-neutral-950 font-semibold text-lg tracking-tight">
+        <span className="text-white font-semibold text-lg tracking-tight">
           ilos.ai
         </span>
       )}
