@@ -112,12 +112,29 @@ export function ResultsContent() {
     setSubmitting(true);
     setError("");
     try {
+      const savedAnswers = sessionStorage.getItem("diagnostic_answers");
+      const answers = savedAnswers ? JSON.parse(savedAnswers) : {};
+
       const res = await fetch("/api/capture-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, score: result.score, tier, industry, systems: result.recommendedSystems }),
+        body: JSON.stringify({
+          name,
+          email,
+          score:               result.score,
+          tier,
+          industry,
+          systems:             result.recommendedSystems,
+          answers,
+          estimatedSavings:    result.estimatedSavings,
+          automationPotential: result.automationPotential,
+        }),
       });
       if (!res.ok) throw new Error("Failed");
+
+      const json = await res.json().catch(() => ({}));
+      if (json.leadId) sessionStorage.setItem("diagnostic_lead_id", json.leadId);
+
       sessionStorage.setItem("diagnostic_unlocked", "true");
       sessionStorage.setItem("diagnostic_name", name);
       sessionStorage.setItem("diagnostic_email", email);
@@ -130,13 +147,15 @@ export function ResultsContent() {
   }
 
   function handleBookCall() {
+    const leadId = sessionStorage.getItem("diagnostic_lead_id") ?? "";
     const params = new URLSearchParams({
-      score: String(result.score),
+      score:   String(result.score),
       tier,
       industry,
       name,
-      email: sessionStorage.getItem("diagnostic_email") ?? "",
+      email:   sessionStorage.getItem("diagnostic_email") ?? "",
       systems: result.recommendedSystems[0] ?? "",
+      ...(leadId ? { leadId } : {}),
     });
     router.push(`/book?${params.toString()}`);
   }

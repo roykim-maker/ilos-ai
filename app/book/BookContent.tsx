@@ -1,43 +1,59 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 import { tierConfig } from "@/lib/diagnostic";
 
 const industryLabel: Record<string, string> = {
-  dental: "dental practice",
-  legal: "law firm",
-  medical: "medical clinic",
+  dental:          "dental practice",
+  legal:           "law firm",
+  medical:         "medical clinic",
   "home-services": "service business",
-  agency: "agency",
-  other: "business",
+  agency:          "agency",
+  other:           "business",
 };
 
 const systemContext: Record<string, string> = {
-  "AI Front Desk": "an AI front desk that handles every call, booking, and after-hours inquiry",
-  "Workflow Automation": "workflow automation that eliminates your most expensive manual processes",
-  "Communication Layer": "a communication layer that responds to every lead on every channel, instantly",
-  "AI Operating System": "a unified AI OS that connects and runs every part of your operation",
+  "AI Front Desk":        "an AI front desk that handles every call, booking, and after-hours inquiry",
+  "Workflow Automation":  "workflow automation that eliminates your most expensive manual processes",
+  "Communication Layer":  "a communication layer that responds to every lead on every channel, instantly",
+  "AI Operating System":  "a unified AI OS that connects and runs every part of your operation",
 };
 
 export function BookContent() {
   const params = useSearchParams();
-  const score = parseInt(params.get("score") ?? "0", 10);
-  const tier = (params.get("tier") ?? "high") as "high" | "medium" | "low";
-  const industry = params.get("industry") ?? "";
-  const name = params.get("name") ?? "";
-  const email = params.get("email") ?? "";
+  const score         = parseInt(params.get("score") ?? "0", 10);
+  const tier          = (params.get("tier") ?? "high") as "high" | "medium" | "low";
+  const industry      = params.get("industry") ?? "";
+  const name          = params.get("name") ?? "";
+  const email         = params.get("email") ?? "";
   const primarySystem = params.get("systems") ?? "AI Front Desk";
+  const leadId        = params.get("leadId") ?? "";
 
-  const cfg = tierConfig[tier];
-  const biz = industryLabel[industry] ?? "business";
+  const cfg        = tierConfig[tier];
+  const biz        = industryLabel[industry] ?? "business";
   const systemDesc = systemContext[primarySystem] ?? "an AI OS tailored to your operation";
 
-  // Prefill Calendly via URL params
-  const calendlyBase = "https://calendly.com/roy-ilos/30min";
+  // Fire book_clicked event — fire-and-forget, never blocks UX
+  useEffect(() => {
+    if (!leadId) return;
+    fetch("/api/lead-event", {
+      method:  "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        leadId,
+        eventType:    "book_clicked",
+        eventPayload: { score, tier, industry, primarySystem },
+      }),
+    }).catch(() => {});
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Prefill Calendly with name + email from results page
+  const calendlyBase   = "https://calendly.com/roy-ilos/30min";
   const calendlyParams = new URLSearchParams();
-  if (name) calendlyParams.set("name", name);
+  if (name)  calendlyParams.set("name", name);
   if (email) calendlyParams.set("email", email);
   const calendlyUrl = `${calendlyBase}${calendlyParams.toString() ? `?${calendlyParams.toString()}` : ""}`;
 
@@ -52,13 +68,8 @@ export function BookContent() {
       {/* Minimal header */}
       <header className="border-b border-neutral-800 px-6 py-4">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <Link href="/">
-            <Logo />
-          </Link>
-          <Link
-            href="/results"
-            className="text-sm text-neutral-500 hover:text-neutral-300 transition-colors"
-          >
+          <Link href="/"><Logo /></Link>
+          <Link href="/results" className="text-sm text-neutral-500 hover:text-neutral-300 transition-colors">
             ← Back to results
           </Link>
         </div>
@@ -69,7 +80,6 @@ export function BookContent() {
 
           {/* Left: context */}
           <div className="animate-fade-slide-up">
-            {/* Score badge */}
             {score > 0 && (
               <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border mb-6 ${cfg.bg} ${cfg.border}`}>
                 <span className="text-xs font-mono font-bold text-white">{score}/100</span>
@@ -90,7 +100,6 @@ export function BookContent() {
               <span className="text-white font-medium">{systemDesc}</span>.
             </p>
 
-            {/* What to expect */}
             <div className="mt-8">
               <p className="text-xs font-semibold uppercase tracking-widest text-neutral-500 mb-4">
                 What we&apos;ll cover in 30 minutes
@@ -108,13 +117,8 @@ export function BookContent() {
               </ul>
             </div>
 
-            {/* Trust signals */}
             <div className="mt-10 flex flex-col gap-3">
-              {[
-                "Free — no cost, no obligation",
-                "30 minutes, video or phone",
-                "Leave with a clear plan regardless",
-              ].map((s) => (
+              {["Free — no cost, no obligation", "30 minutes, video or phone", "Leave with a clear plan regardless"].map((s) => (
                 <div key={s} className="flex items-center gap-2 text-xs text-neutral-500">
                   <div className="w-1 h-1 rounded-full bg-neutral-700" />
                   {s}
@@ -138,7 +142,6 @@ export function BookContent() {
         </div>
       </div>
 
-      {/* Minimal footer */}
       <footer className="border-t border-neutral-800 px-6 py-4">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <p className="text-xs text-neutral-700">© {new Date().getFullYear()} ilos.ai</p>

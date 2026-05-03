@@ -264,3 +264,82 @@ export const tierConfig = {
   medium: { label: "Good Potential", color: "text-neutral-300", border: "border-neutral-500/40", bg: "bg-neutral-800/30" },
   low:    { label: "Early Stage",    color: "text-neutral-500", border: "border-neutral-700/40", bg: "bg-neutral-900/30" },
 } as const;
+
+// ─── Label maps for storage / display ─────────────────────────────────────────
+
+export const questionLabels: Record<string, string> = {
+  industry:        "Business Industry",
+  businessSize:    "Team Size",
+  challenge:       "Biggest Operational Challenge",
+  goal:            "Primary AI Goal",
+  budget:          "Implementation Budget",
+  volume:          "Call / Lead Volume",
+  currentSystem:   "Current System Quality",
+  isDecisionMaker: "Decision Maker Status",
+  timeline:        "Implementation Timeline",
+};
+
+export const answerLabels: Record<string, Record<string, string>> = {
+  industry: {
+    dental:          "Dental Practice",
+    legal:           "Law Firm",
+    medical:         "Medical Clinic",
+    "home-services": "Home Services",
+    agency:          "Agency / Consulting",
+    other:           "Other Service Business",
+  },
+  businessSize: {
+    solo:  "Solo / 1–2 people",
+    small: "Small team (3–10)",
+    mid:   "Mid-size (11–50)",
+    large: "Larger (50+)",
+  },
+  challenge: {
+    "missing-calls":      "Missing calls and leads",
+    "manual-scheduling":  "Manual, repetitive scheduling",
+    "slow-followup":      "Slow or inconsistent follow-up",
+    "staff-overwhelm":    "Staff overwhelmed by admin",
+    "inconsistent-comms": "Fragmented customer communication",
+  },
+  goal: {
+    "replace-staff":        "Reduce front desk labor cost",
+    "automate-workflows":   "Automate internal workflows",
+    "improve-conversion":   "Improve lead conversion",
+    "better-communication": "Upgrade customer communication",
+  },
+  budget: {
+    "under-5k": "Under $5,000",
+    "5k-15k":   "$5,000 – $15,000",
+    "15k-35k":  "$15,000 – $35,000",
+    "35k-plus": "$35,000+",
+    "not-sure": "Not sure yet",
+  },
+  volume: {
+    low:        "Low volume",
+    medium:     "Medium volume",
+    high:       "High volume",
+    "very-high":"Very high volume",
+  },
+  currentSystem: {
+    strong: "Strong — rarely miss anything",
+    good:   "Good — occasional gaps",
+    poor:   "Poor — frequent gaps",
+    none:   "No real system",
+  },
+  isDecisionMaker: {
+    yes:    "Yes, I make the call",
+    shared: "Shared decision",
+    no:     "No — need to involve others",
+  },
+  timeline: {
+    immediately:  "Immediately (within 30 days)",
+    "1-3-months": "Next 1–3 months",
+    "3-6-months": "In 3–6 months",
+    exploring:    "Just exploring",
+  },
+};
+
+export const questionStep: Record<string, number> = {
+  industry: 1, businessSize: 1, challenge: 1, goal: 1, budget: 1,
+  volume: 2, currentSystem: 2, isDecisionMaker: 2, timeline: 2,
+};
