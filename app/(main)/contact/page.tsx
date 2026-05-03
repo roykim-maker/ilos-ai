@@ -48,7 +48,7 @@ export default function ContactPage() {
               </h2>
               <div className="rounded-xl border border-neutral-800 overflow-hidden bg-neutral-950">
                 <iframe
-                  src="https://calendly.com/ilos-ai/demo"
+                  src="https://calendly.com/roy-ilos/30min"
                   width="100%"
                   height="680"
                   frameBorder="0"

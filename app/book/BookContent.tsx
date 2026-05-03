@@ -35,7 +35,7 @@ export function BookContent() {
   const systemDesc = systemContext[primarySystem] ?? "an AI OS tailored to your operation";
 
   // Prefill Calendly via URL params
-  const calendlyBase = "https://calendly.com/ilos-ai/demo";
+  const calendlyBase = "https://calendly.com/roy-ilos/30min";
   const calendlyParams = new URLSearchParams();
   if (name) calendlyParams.set("name", name);
   if (email) calendlyParams.set("email", email);
