@@ -84,32 +84,35 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[88vh] flex items-center bg-neutral-950">
+      <section className="relative bg-neutral-950">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_0%,_#2563eb18_0%,_transparent_60%)] pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
+        <div className="relative max-w-7xl mx-auto px-6 py-16 sm:py-20">
           <div className="max-w-3xl">
-            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-400 mb-6">
+            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">
               AI Operating Systems
             </span>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05]">
               AI Operating Systems for Modern Businesses
             </h1>
-            <p className="mt-6 text-xl text-neutral-400 max-w-xl leading-relaxed">
+            <p className="mt-4 text-xl text-neutral-400 max-w-xl leading-relaxed">
               We design and deploy AI systems that run your operations — so you
               don&apos;t have to.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-7">
               <Link
                 href="/diagnostic"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3.5 rounded-lg transition-colors"
+                className="inline-block bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 text-white font-semibold px-7 py-3.5 rounded-lg transition-all shadow-[0_0_24px_rgba(6,182,212,0.2)] hover:shadow-[0_0_32px_rgba(6,182,212,0.35)]"
               >
-                Get Your AI System Plan
+                Start Diagnostic →
               </Link>
+              <p className="mt-3 text-xs text-neutral-600">
+                Takes 3 minutes&nbsp;•&nbsp;Instant results
+              </p>
               <Link
                 href="/contact"
-                className="border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-white font-medium px-6 py-3.5 rounded-lg transition-colors"
+                className="mt-4 inline-block text-sm text-neutral-600 hover:text-neutral-400 transition-colors"
               >
-                Book a Demo
+                or book a call directly →
               </Link>
             </div>
           </div>
