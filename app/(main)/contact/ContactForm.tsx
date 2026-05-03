@@ -65,8 +65,8 @@ export function ContactForm() {
           Message received
         </h3>
         <p className="text-neutral-400 text-sm leading-relaxed">
-          We&apos;ll get back to you within one business day. Or feel free to
-          book directly on the calendar to the right.
+          We&apos;ll get back to you within one business day. Or book directly
+          on the calendar above — no waiting required.
         </p>
       </div>
     );
