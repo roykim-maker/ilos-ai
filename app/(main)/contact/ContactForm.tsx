@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "@/components/Button";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
@@ -165,13 +166,9 @@ export function ContactForm() {
         </p>
       )}
 
-      <button
-        type="submit"
-        disabled={state === "submitting"}
-        className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-900 disabled:text-blue-600 text-white font-medium px-6 py-3.5 rounded-lg transition-colors text-sm cursor-pointer disabled:cursor-not-allowed"
-      >
+      <Button type="submit" disabled={state === "submitting"} className="w-full">
         {state === "submitting" ? "Sending..." : "Send Message"}
-      </button>
+      </Button>
     </form>
   );
 }

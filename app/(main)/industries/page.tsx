@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Button } from "@/components/Button";
 
 export const metadata: Metadata = {
   title: "Industries",
@@ -212,12 +213,9 @@ export default function IndustriesPage() {
             scheduling are core to your operation, we can likely help. Let&apos;s
             talk.
           </p>
-          <Link
-            href="/contact"
-            className="mt-10 inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 rounded-lg transition-colors text-lg"
-          >
+          <Button href="/contact" size="lg" className="mt-10">
             Book a Strategy Call
-          </Link>
+          </Button>
         </div>
       </section>
     </>

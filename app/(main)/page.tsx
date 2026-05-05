@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Button } from "@/components/Button";
 
 export const metadata: Metadata = {
   title: "ilos.ai — AI Operating Systems for Modern Businesses",
@@ -99,12 +100,9 @@ export default function HomePage() {
               don&apos;t have to.
             </p>
             <div className="mt-7">
-              <Link
-                href="/diagnostic"
-                className="inline-block bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-white font-semibold px-7 py-3.5 rounded-lg transition-all shadow-[0_0_24px_rgba(6,182,212,0.2)] hover:shadow-[0_0_32px_rgba(6,182,212,0.35)] hover:-translate-y-px"
-              >
+              <Button href="/diagnostic" size="lg">
                 Start 3-Minute Diagnostic →
-              </Link>
+              </Button>
               <p className="mt-3 text-sm text-neutral-400">
                 Takes 3 minutes&nbsp;•&nbsp;Instant results
               </p>
@@ -311,12 +309,8 @@ export default function HomePage() {
             Start with a 3-minute diagnostic. Get your score, estimated savings, and a custom AI OS plan — free.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 justify-center">
-            <Link href="/diagnostic" className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 rounded-lg transition-colors text-lg">
-              Get Your Free AI OS Plan
-            </Link>
-            <Link href="/contact" className="border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-white font-medium px-8 py-4 rounded-lg transition-colors text-lg">
-              Book a Strategy Call
-            </Link>
+            <Button href="/diagnostic" size="lg">Get Your Free AI OS Plan</Button>
+            <Button href="/contact" variant="secondary" size="lg">Book a Strategy Call</Button>
           </div>
         </div>
       </section>

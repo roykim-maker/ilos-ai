@@ -4,6 +4,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { computeScore, formatCurrency, tierConfig, type DiagnosticAnswers } from "@/lib/diagnostic";
+import { Button } from "@/components/Button";
 
 const systemDetails: Record<string, { why: string; impact: string }> = {
   "AI Front Desk": {
@@ -82,9 +83,7 @@ export function ResultsContent() {
       <div className="min-h-screen bg-neutral-950 flex items-center justify-center px-6">
         <div className="text-center">
           <p className="text-neutral-400 mb-6">No diagnostic results found.</p>
-          <Link href="/diagnostic" className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition-colors">
-            Take the Diagnostic
-          </Link>
+          <Button href="/diagnostic">Take the Diagnostic</Button>
         </div>
       </div>
     );
@@ -249,13 +248,9 @@ export function ResultsContent() {
                     className="bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   />
                   {error && <p className="text-sm text-red-400">{error}</p>}
-                  <button
-                    type="submit"
-                    disabled={submitting}
-                    className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-900 text-white font-semibold py-3.5 rounded-lg transition-colors text-sm cursor-pointer disabled:cursor-not-allowed"
-                  >
+                  <Button type="submit" disabled={submitting} className="w-full">
                     {submitting ? "Processing…" : "Get My Free Plan →"}
-                  </button>
+                  </Button>
                   <p className="text-xs text-neutral-600 text-center">
                     Free. No spam. Used only to send your plan.
                   </p>
@@ -280,18 +275,10 @@ export function ResultsContent() {
                     A 30-minute call is all it takes to scope your system and set a timeline.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <button
-                      onClick={handleBookCall}
-                      className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl transition-colors text-base"
-                    >
-                      Build My AI System →
-                    </button>
-                    <Link
-                      href="/case-study"
-                      className="border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-white font-medium px-8 py-4 rounded-xl transition-colors text-base"
-                    >
+                    <Button size="lg" onClick={handleBookCall}>Build My AI System →</Button>
+                    <Button href="/case-study" variant="secondary" size="lg">
                       See How This Gets Implemented →
-                    </Link>
+                    </Button>
                   </div>
                   <p className="text-xs text-neutral-600 mt-5">Free 30-minute strategy call. No obligation.</p>
                 </div>
@@ -310,18 +297,10 @@ export function ResultsContent() {
                     the gap quickly — and the ROI typically follows within the first year.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <button
-                      onClick={handleBookCall}
-                      className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl transition-colors text-base"
-                    >
-                      Build My AI System →
-                    </button>
-                    <Link
-                      href="/case-study"
-                      className="border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-white font-medium px-8 py-4 rounded-xl transition-colors text-base"
-                    >
+                    <Button size="lg" onClick={handleBookCall}>Build My AI System →</Button>
+                    <Button href="/case-study" variant="secondary" size="lg">
                       See How This Gets Implemented →
-                    </Link>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -338,12 +317,8 @@ export function ResultsContent() {
                     then build toward implementation.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Link href="/ai-visibility" className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition-colors">
-                      Check Your AI Visibility
-                    </Link>
-                    <Link href="/solutions" className="border border-neutral-700 hover:border-neutral-500 text-white font-medium px-6 py-3 rounded-lg transition-colors">
-                      Explore Solutions
-                    </Link>
+                    <Button href="/ai-visibility">Check Your AI Visibility</Button>
+                    <Button href="/solutions" variant="secondary">Explore Solutions</Button>
                   </div>
                 </div>
               </div>

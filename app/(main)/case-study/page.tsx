@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Button } from "@/components/Button";
 
 export const metadata: Metadata = {
   title: "Case Study — AI Front Desk for a Dental Practice",
@@ -270,12 +271,9 @@ export default function CaseStudyPage() {
             Book a strategy call and we&apos;ll audit your operation — identifying
             exactly what AI can replace, automate, and improve.
           </p>
-          <Link
-            href="/contact"
-            className="mt-10 inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 rounded-lg transition-colors text-lg"
-          >
+          <Button href="/contact" size="lg" className="mt-10">
             Book a Free Strategy Call
-          </Link>
+          </Button>
         </div>
       </section>
     </>

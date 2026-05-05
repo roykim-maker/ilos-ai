@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Logo } from "./Logo";
+import { Button } from "./Button";
 
 const navLinks = [
   { label: "Solutions", href: "/solutions" },
@@ -42,12 +43,7 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <Link
-            href="/contact"
-            className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
-          >
-            Book a Demo
-          </Link>
+          <Button href="/contact" size="sm">Book Strategy Call</Button>
         </div>
 
         {/* Mobile menu toggle */}
@@ -85,13 +81,9 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            onClick={() => setOpen(false)}
-            className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2.5 rounded-lg transition-colors text-center mt-2"
-          >
-            Book a Demo
-          </Link>
+          <Button href="/contact" size="sm" className="w-full justify-center mt-2" onClick={() => setOpen(false)}>
+            Book Strategy Call
+          </Button>
         </div>
       )}
     </header>

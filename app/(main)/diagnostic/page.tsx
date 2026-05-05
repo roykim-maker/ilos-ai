@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { Button } from "@/components/Button";
 import { Logo } from "@/components/Logo";
 import {
   step1Questions,
@@ -120,12 +121,9 @@ export default function DiagnosticPage() {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 items-center">
-            <button
-              onClick={() => { setPhase("step1"); setAnimKey((k) => k + 1); }}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 rounded-lg transition-colors text-base"
-            >
+            <Button size="lg" onClick={() => { setPhase("step1"); setAnimKey((k) => k + 1); }}>
               Start My Diagnostic
-            </button>
+            </Button>
             <Link href="/" className="text-sm text-neutral-500 hover:text-neutral-300 transition-colors">
               Back to ilos.ai
             </Link>
@@ -253,15 +251,11 @@ export default function DiagnosticPage() {
             >
               Start over
             </Link>
-            <button
-              onClick={handleNext}
-              disabled={!selected}
-              className="bg-blue-600 hover:bg-blue-700 disabled:bg-neutral-800 disabled:text-neutral-600 text-white font-medium px-6 py-3 rounded-lg transition-colors text-sm cursor-pointer disabled:cursor-not-allowed"
-            >
+            <Button onClick={handleNext} disabled={!selected}>
               {phase === "step2" && qIndex === step2Questions.length - 1
                 ? "See My Results →"
                 : "Next →"}
-            </button>
+            </Button>
           </div>
         </div>
       </div>

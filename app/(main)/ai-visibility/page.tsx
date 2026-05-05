@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Button } from "@/components/Button";
 
 export const metadata: Metadata = {
   title: "AI Visibility — Is Your Business Showing Up?",
@@ -68,20 +69,10 @@ export default function AIVisibilityPage() {
               search — and don&apos;t know it.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/diagnostic"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-7 py-4 rounded-lg transition-colors"
-              >
-                Diagnose Your Business
-              </Link>
-              <a
-                href="https://influencelayer.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-white font-medium px-7 py-4 rounded-lg transition-colors"
-              >
+              <Button href="/diagnostic" size="lg">Diagnose Your Business</Button>
+              <Button href="https://influencelayer.com" variant="secondary" size="lg" external>
                 Explore InfluenceLayer ↗
-              </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -185,14 +176,9 @@ export default function AIVisibilityPage() {
                 Think of it as SEO — but for the AI era.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href="https://influencelayer.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-white font-medium px-6 py-3 rounded-lg transition-colors text-sm"
-                >
+                <Button href="https://influencelayer.com" variant="secondary" size="md" external>
                   Visit InfluenceLayer ↗
-                </a>
+                </Button>
               </div>
             </div>
             <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8">
@@ -227,20 +213,10 @@ export default function AIVisibilityPage() {
             then track how it changes where you show up.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/diagnostic"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 rounded-lg transition-colors text-lg"
-            >
-              Get Your AI OS Plan
-            </Link>
-            <a
-              href="https://influencelayer.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-white font-medium px-8 py-4 rounded-lg transition-colors text-lg"
-            >
+            <Button href="/diagnostic" size="lg">Get Your AI OS Plan</Button>
+            <Button href="https://influencelayer.com" variant="secondary" size="lg" external>
               InfluenceLayer ↗
-            </a>
+            </Button>
           </div>
         </div>
       </section>
