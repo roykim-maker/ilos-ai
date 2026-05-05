@@ -86,33 +86,33 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative bg-neutral-950">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_0%,_#2563eb18_0%,_transparent_60%)] pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto px-6 py-16 sm:py-20">
-          <div className="max-w-3xl">
+        <div className="relative max-w-7xl mx-auto px-6 py-14 sm:py-20">
+          <div className="max-w-2xl">
             <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">
               AI Operating Systems
             </span>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05]">
               AI Operating Systems for Modern Businesses
             </h1>
-            <p className="mt-4 text-xl text-neutral-400 max-w-xl leading-relaxed">
+            <p className="mt-4 text-xl text-neutral-400 leading-relaxed">
               We design and deploy AI systems that run your operations — so you
               don&apos;t have to.
             </p>
             <div className="mt-7">
               <Link
                 href="/diagnostic"
-                className="inline-block bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400 text-white font-semibold px-7 py-3.5 rounded-lg transition-all shadow-[0_0_24px_rgba(6,182,212,0.2)] hover:shadow-[0_0_32px_rgba(6,182,212,0.35)]"
+                className="inline-block bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-white font-semibold px-7 py-3.5 rounded-lg transition-all shadow-[0_0_24px_rgba(6,182,212,0.2)] hover:shadow-[0_0_32px_rgba(6,182,212,0.35)] hover:-translate-y-px"
               >
-                Start Diagnostic →
+                Start 3-Minute Diagnostic →
               </Link>
-              <p className="mt-3 text-xs text-neutral-600">
+              <p className="mt-3 text-sm text-neutral-400">
                 Takes 3 minutes&nbsp;•&nbsp;Instant results
               </p>
               <Link
                 href="/contact"
-                className="mt-4 inline-block text-sm text-neutral-600 hover:text-neutral-400 transition-colors"
+                className="mt-4 inline-block text-sm text-neutral-400 hover:text-white transition-colors"
               >
-                or book a call directly →
+                Prefer to talk? Book a strategy call →
               </Link>
             </div>
           </div>
